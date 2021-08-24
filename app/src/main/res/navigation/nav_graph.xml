@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/articleList">
+    <fragment
+        android:id="@+id/articleList"
+        android:name="com.anaf.healthyliving.ui.articleshome.ArticlesHomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/articles_home_fragment">
+        <action
+            android:id="@+id/from_list_to_details"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:destination="@id/articleDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleDetails"
+        android:name="com.anaf.healthyliving.ui.articlesdetails.ArticlesDetailsFragment"
+        android:label=""
+        tools:layout="@layout/articles_details_fragment">
+        <argument
+            android:name="article"
+            app:argType="com.anaf.healthyliving.networking.models.Article" />
+    </fragment>
+</navigation>
